@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>C.A.T.S.U.P.</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css" charset="utf-8">
+    <script src="./js/jquery-1.11.2.js"></script>
+    <script src="./js/scripts.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>C.A.T.S.U.P.<small>Center for the Appreciation of Three-Sided Unique Polygons</small></h1>
+      </div>
+      <form id="sides" action="submit" method="post" class="form-inline">
+        <div class="form=group">
+          <input type="text" name="side1" placeholder="length of side one">
+          <input type="text" name="side2" placeholder="length of side two">
+          <input type="text" name="side3" placeholder="length of side three">
+        </div>
+        <button id="submit" type="submit" class="btn btn-success">Tell me about this triangle</button>
+      </form>
+      <div id="hidden well">
+        <div id="triangle"></div>
+        <div id="equilateral"></div>
+        <div id="isosceles"></div>
+        <div id="scalene"></div>
+      </div>
+    </div>
+  </body>
+</html>
