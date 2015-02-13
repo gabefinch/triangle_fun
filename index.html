@@ -12,19 +12,18 @@
       <div class="page-header">
         <h1>C.A.T.S.U.P.<small>Center for the Appreciation of Three-Sided Unique Polygons</small></h1>
       </div>
-      <form id="sides" action="submit" method="post" class="form-inline">
+      <form id="sides-entry" action="submit" method="post" class="form-inline">
         <div class="form=group">
-          <input type="text" name="side1" placeholder="length of side one">
-          <input type="text" name="side2" placeholder="length of side two">
-          <input type="text" name="side3" placeholder="length of side three">
+          <input type="text" id="side1" placeholder="length of side one">
+          <input type="text" id="side2" placeholder="length of side two">
+          <input type="text" id="side3" placeholder="length of side three">
         </div>
         <button id="submit" type="submit" class="btn btn-success">Tell me about this triangle</button>
       </form>
-      <div id="hidden well">
+      <div id="results" class="well">
+        <div><ul id="sides-entered"></ul></div>
         <div id="triangle"></div>
-        <div id="equilateral"></div>
-        <div id="isosceles"></div>
-        <div id="scalene"></div>
+        <div id="tri-info"></div>
       </div>
     </div>
   </body>
