@@ -27,26 +27,33 @@ var isScalene = function(side1,side2, side3) {
   }
 }
 $(function(){
-  $('.sides-entry').submit(function(event) {
-    var side1 = $('.side1').val();
-    var side2 = $('.side2').val();
-    var side3 = $('.side3').val();
-    $('.sides-entered').append('<ul>Side1:' + side1 + '</ul>');
-    $('.sides-entered').append('<ul>Side2:' + side2 + '</ul>');
-    $('.sides-entered').append('<ul>Side3:' + side3 + '</ul>');
+  $('#sides-entry').submit(function(event) {
+    $('#sides-entered').empty()
+    $('#triangle').empty()
+    $('#tri-info').empty()
+
+    var side1 = $('#side1').val();
+    var side2 = $('#side2').val();
+    var side3 = $('#side3').val();
+    $('#sides-entered').append('<ul>Length of the first side: ' + side1 + '</ul>');
+    $('#sides-entered').append('<ul>Length of the second side: ' + side2 + '</ul>');
+    $('#sides-entered').append('<ul>Length of the third side: ' + side3 + '</ul>');
     if (isTriangle(side1,side2,side3)) {
-      $('.triangle').append('<h3>We can make a triangle from those sides! Wowee!</h3>');
+      $('#triangle').append('We can make a triangle from those sides! Wowee!');
       if (isEquilateral(side1,side2,side3)) {
-        $('.tri-info').append('<h3>This triangle is <a href="">equilateral</a>! All three sides are the same length! Coolness!</h3>');
-      } else if(isIsosceles(side1,side2,side3)) {
-        $('.tri-info').append('<h3>This triangle is <a href="">isosceles</a>! Two of the sides are the same length! Far out!</h3>');
-      } else {
-        $('.tri-info').append('<h3>This triangle is <a href="">scalene</a>! Each side is unique!</h3>');
+        $('#tri-info').append('This triangle is <a href="http://en.wikipedia.org/wiki/Equilateral_triangle">equilateral</a>! All three sides are the same length! Coolness!');
       }
-    } else {
-      $('.triangle').text('Saddled with the constraints of Euclidian geometry, the sides you entered cannot make a triangle. You might have the makings of a non-Euclidian geometer!')
+      else if(isIsosceles(side1,side2,side3)) {
+        $('#tri-info').append('This triangle is <a href="http://en.wikipedia.org/wiki/Isosceles_triangle">isosceles</a>! Two of the sides are the same length! Far out!');
+      }
+      else {
+        $('#tri-info').append('This triangle is <a href="http://en.wikipedia.org/wiki/Triangle#By_relative_lengths_of_sides">scalene</a>! Each side is unique!');
+      }
     }
-    $('.results').show();
+    else {
+      $('#triangle').append('Saddled with the constraints of <a href="http://en.wikipedia.org/wiki/Euclidean_geometry">Euclidian geometry</a>, the sides you entered cannot make a triangle. You might have the makings of a <a href="http://en.wikipedia.org/wiki/Non-Euclidean_geometry">non-Euclidian</a> geometer!');
+    }
+    $('#results').show();
     event.preventDefault();
   });
 });
