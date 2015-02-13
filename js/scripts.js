@@ -25,7 +25,21 @@ var isScalene = function(side1,side2, side3) {
   } else {
     return true;
   }
-}
+};
+var orderSides = function(sides) {
+  return sides.sort().reverse()
+};
+var angleCalc = function(opposite, adjacent1, adjacent2) {
+  return Math.round((Math.acos((Math.pow(adjacent1,2) + Math.pow(adjacent2,2) - Math.pow(opposite,2)) / (2 * adjacent1 * adjacent2))) * (180/Math.PI))
+  // law of cosines
+};
+var drawTriangle = function(sides) {
+    var scale = 200/(sides[0]);
+
+    return '<polygon points="0,0 200,0 100,100" style="fill:lime;stroke:purple;stroke-width:1" />';
+};
+
+
 $(function(){
   $('#sides-entry').submit(function(event) {
     $('#sides-entered').empty()
