@@ -50,17 +50,9 @@ describe('orderSides', function() {
     expect(orderSides([3,4,5])).to.eql([5,4,3])
   });
 });
-describe('angleCalc', function() {
-  it('returns 90 given appropriate sides', function() {
-    expect(angleCalc(5.0,3.536,3.536)).to.equal(90);
-  });
-  it('returns 45 given appropriate sides', function() {
-    expect(angleCalc(3.536,3.536,5.0)).to.equal(45);
-  });
-});
 
 describe('drawTriangle', function() {
   it('produces svg for a simple right triangle', function() {
-    expect(drawTriangle([5.0,3.536,3.536])).to.equal('<polygon points="0,0 200,0 100,100" style="fill:lime;stroke:purple;stroke-width:1" />');
+    expect(drawTriangle([5.0,3.536,3.536])).to.equal('<polygon points="0,0 200,0 100.0,100.0" style="fill:lime;stroke:purple;stroke-width:1" />');
   })
 });
