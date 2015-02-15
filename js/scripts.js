@@ -33,7 +33,7 @@ var drawTriangle = function(sides) {
     var scale = 200/(sides[0]);
     var peakX = (scale * sides[1] * Math.sin(Math.PI / 2 - Math.acos((Math.pow(sides[0],2) + Math.pow(sides[1],2) - Math.pow(sides[2],2)) / (2 * sides[0] * sides[1])))).toFixed(1);
     var peakY = (scale * Math.sqrt(Math.pow(sides[1],2)-Math.pow(peakX / scale,2))).toFixed(1);
-    return '<polygon points="0,0 200,0 ' + peakX + ',' + peakY + '" style="fill:lime;stroke:purple;stroke-width:1" />';
+    return '<svg height="' + peakY + '" width="200" id="canvas"><polygon points="0,0 200,0 ' + peakX + ',' + peakY + '" style="fill:lime;stroke:purple;stroke-width:1" /></svg>';
 };
 
 $(function(){
